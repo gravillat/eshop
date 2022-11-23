@@ -44,6 +44,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -121,6 +124,7 @@ AUTH_USER_MODEL = 'account.MyUser'
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 MEDIA_URL = 'mediafiles/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = 'static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '')
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
